@@ -15,8 +15,27 @@ var callFriend = function(){
 
 /*
 
-Write a function that accepts a function as it's first argument and returns a new function (which calls the original function that was passed in) that can only ever be executed once.
+Write a function that accepts a function as it's first argument and returns a new function (which calls the original 
+function that was passed in) that can only ever be executed once.
 
-Once completed, add a second arguments that allows the function to be executed N number of times. After the function has been called N number of times, console.log('STAHHP');
+Once completed, add a second arguments that allows the function to be executed N number of times. After the function 
+has been called N number of times, console.log('STAHHP');
 
 */
+
+
+var runN = function(fn, timesToRun) {
+	var count = timesToRun;
+	return function() {
+		if (count > 0) {
+			fn();
+			count--;
+		} else {
+			console.log('stop');
+			}
+		}
+	};
+
+	var result = runN(function() {
+		console.log('run');
+	}, 5);
