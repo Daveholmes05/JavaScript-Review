@@ -121,3 +121,29 @@ console.log(capitalize(myPoem));
 
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
 //Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
+
+// function vowelCounter(str) {
+// 	var words = str.split(' ');
+// 	var num = 0;
+// 	for (var i = 0; i < words.length; i++) {
+// 		if (words[i].toLowerCase() === 'a' || 'e' || 'i' || 'o' || 'u') {
+// 			num += 1;
+// 		}
+// 	}
+
+// 	return num;
+// }
+
+function vowelCounter(str) {
+	var vowelList = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+	var vcount = 0;
+
+	for (var i = 0; i < str.length; i++) {
+		if (vowelList.indexOf(str[i]) !== -1) {
+			vcount += 1;
+		}
+	}
+	return vcount;
+}
+
+console.log(vowelCounter(theOdyssey));
